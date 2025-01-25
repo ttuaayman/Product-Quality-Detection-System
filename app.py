@@ -219,7 +219,11 @@ def extract_features(image_path):
     contrast, correlation, energy = extract_texture_features(image)
     mean_intensity = np.mean(gray_image)
 
-    features = np.array([white_pixel_ratio, edge_pixel_ratio, contrast, correlation, energy, mean_intensity])
+    # استخراج ميزات الألوان
+    mean_color = np.mean(image, axis=(0, 1))
+    std_color = np.std(image, axis=(0, 1))
+
+    features = np.array([white_pixel_ratio, edge_pixel_ratio, contrast, correlation, energy, mean_intensity, *mean_color, *std_color])
     return features
 
 # دالة لاختبار الدقة
@@ -267,7 +271,7 @@ import os
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import Sequential # type: ignore
-from tensorflow.keras.layers import Dense, Flatten # type: ignore
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout # type: ignore
 from tensorflow.keras.preprocessing.image import ImageDataGenerator # type: ignore
 
 # إعداد البيانات
@@ -287,11 +291,17 @@ validation_generator = datagen.flow_from_directory(
     subset='validation'
 )
 
-# بناء النموذج
+# بناء نموذج CNN
 model = Sequential([
-    Flatten(input_shape=(150, 150, 3)),
+    Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)),
+    MaxPooling2D((2, 2)),
+    Conv2D(64, (3, 3), activation='relu'),
+    MaxPooling2D((2, 2)),
+    Conv2D(128, (3, 3), activation='relu'),
+    MaxPooling2D((2, 2)),
+    Flatten(),
     Dense(128, activation='relu'),
-    Dense(64, activation='relu'),
+    Dropout(0.5),
     Dense(train_generator.num_classes, activation='softmax')
 ])
 
@@ -301,6 +311,30 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 model.fit(train_generator, validation_data=validation_generator, epochs=10)
 
 # حفظ النموذج
-model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "fruit_classifier.h5")
+model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "fruit_classifier_cnn.h5")
 os.makedirs(os.path.dirname(model_path), exist_ok=True)
 model.save(model_path)
+
+@app.route('/feedback', methods=['POST'])
+def feedback():
+    filename = request.form['filename']
+    fruit_type = request.form['fruit_type']
+    quality = request.form['quality']
+    user_feedback = request.form['user_feedback']
+    correct_fruit = request.form.get('correct_fruit', None)
+    correct_quality = request.form.get('correct_quality', None)
+
+    feedback_data = {
+        'filename': filename,
+        'fruit_type': fruit_type,
+        'quality': quality,
+        'user_feedback': user_feedback,
+        'correct_fruit': correct_fruit,
+        'correct_quality': correct_quality
+    }
+    feedback_df = pd.DataFrame([feedback_data])
+    feedback_file = os.path.join(RESULTS_FOLDER, "user_feedback.csv")
+    feedback_df.to_csv(feedback_file, mode='a', header=not os.path.exists(feedback_file), index=False)
+
+    flash('Thank you for your feedback!')
+    return redirect(url_for('dashboard'))
