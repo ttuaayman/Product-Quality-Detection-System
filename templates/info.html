@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/breda_robotics.png') }}" alt="Breda Robotics" class="logo">
+            <h1>{{ title }}</h1>
+            <img src="{{ url_for('static', filename='images/utrecht_university.png') }}" alt="Utrecht University" class="logo">
+        </div>
+    </header>
+
+    <section class="content-section">
+        <h2>{{ title }}</h2>
+        <p>{{ content }}</p>
+    </section>
+
+    <div class="buttons-container">
+        <a href="/" class="button">🏠 Home</a>
+        <a href="/dashboard" class="button">📊 View Dashboard</a>
+    </div>
+
+    <footer>
+        <p>Developed by: <strong>Tareq Tuaayman</strong></p>
+        <p>Master in Next Level Engineering - Utrecht University of Applied Sciences</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Image Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- ✅ Header Section -->
+    <header class="dashboard-header">
+        <div class="header-logo-container">
+            <img src="{{ url_for('static', filename='images/breda_robotics.png') }}" alt="Breda Robotics" class="logo">
+            <h1>📊 Dashboard - Image Analysis Statistics</h1>
+            <img src="{{ url_for('static', filename='images/utrecht_university.png') }}" alt="Utrecht University of Applied Sciences" class="logo">
+        </div>
+    </header>
+
+    <!-- ✅ Statistics Container -->
+    <div class="stats-container">
+
+        <!-- Total Analyzed Images -->
+        <div class="stat-box stat-box-large">
+            <h2>Total Analyzed Images</h2>
+            <p class="stat-value">{{ total_images or 0 }}</p>
+        </div>
+
+        <!-- Fresh Products Percentage -->
+        <div class="stat-box">
+            <h2>Fresh Products</h2>
+            <p class="stat-value">{{ fresh_percentage or 0 }}%</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: {{ fresh_percentage or 0 }}%;"></div>
+            </div>
+        </div>
+
+        <!-- Medium Quality Products Percentage -->
+        <div class="stat-box">
+            <h2>Medium Quality Products</h2>
+            <p class="stat-value">{{ medium_percentage or 0 }}%</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: {{ medium_percentage | default(0) }}%;"></div>
+            </div>
+        </div>
+
+        <!-- Rotten Products Percentage -->
+        <div class="stat-box">
+            <h2>Rotten Products</h2>
+            <p class="stat-value">{{ rotten_percentage or 0 }}%</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: {{ rotten_percentage or 0 }}%;"></div>
+            </div>
+        </div>
+
+        <!-- User Feedback -->
+        <div class="stat-box stat-box-large">
+            <h2>User Feedback Received</h2>
+            <p class="stat-value">{{ user_feedback_count or 0 }}</p>
+        </div>
+
+    </div>
+
+    <!-- ✅ Navigation Buttons -->
+    <div class="buttons-container">
+        <a href="/" class="button btn-primary">🔄 Upload Another Image</a>
+        <a href="{{ url_for('breda_robotics') }}" class="button btn-secondary">🏢 About Breda Robotics</a>
+        <a href="{{ url_for('utrecht_university') }}" class="button btn-secondary">🎓 About Utrecht University</a>
+        <a href="{{ url_for('next_level_engineering') }}" class="button btn-secondary">📚 My Master's Program</a>
+        <a href="{{ url_for('project_info') }}" class="button btn-secondary">💡 Project Overview</a>
+    </div>
+
+    <!-- ✅ Footer Section -->
+    <footer class="dashboard-footer">
+        <p>Developed by: <strong>Tareq Tuaayman</strong></p>
+        <p>Master in Next Level Engineering - Utrecht University of Applied Sciences</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+train: /path/to/train/images
+val: /path/to/val/images
+
+nc: 3  # عدد الفئات (الفواكه)
+names: ['apple', 'banana', 'orange']  # أسماء الفئات

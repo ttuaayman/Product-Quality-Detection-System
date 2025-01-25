@@ -1,0 +1,631 @@
+/* 🌐 General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* 🏢 Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #003366;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logo {
+    height: 80px;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+/* 📝 Project Introduction */
+.introduction {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.introduction h2 {
+    color: #003366;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.introduction p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* 📂 Upload & Camera Section */
+.upload-section, .camera-section {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+button, .btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover, .btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* 📸 Camera Section */
+video {
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+#camera-select {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 📊 Dashboard Styling */
+h1 {
+    color: #003366;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.stat-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    margin: 15px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.stat-box:hover {
+    transform: scale(1.05);
+}
+
+.stat-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #003366;
+}
+
+/* 📈 Progress Bar */
+.progress-bar {
+    background: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 15px;
+    margin-top: 5px;
+}
+
+.progress {
+    background: #28a745;
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* 🎯 Navigation Buttons */
+.buttons-container {
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #0056b3;
+    transform: scale(1.08);
+}
+
+/* 📂 Image Result Container */
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-box img {
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-box img:hover {
+    transform: scale(1.05);
+}
+
+/* ℹ️ Info Links Section */
+.info-links {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    width: 80%;
+}
+
+.info-links h2 {
+    font-size: 24px;
+    color: #003366;
+}
+
+.info-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.info-links a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info-links a:hover {
+    text-decoration: underline;
+}
+
+/* 📍 Footer */
+footer {
+    margin-top: 30px;
+    background: #003366;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* 🎯 Buttons */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.08);
+}
+
+/* 📸 Camera Section */
+.camera-section {
+    text-align: center;
+    margin: 30px auto;
+    width: 60%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+video {
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+#camera-select {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 📂 Upload Section */
+.upload-section {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: none;
+}
+
+.file-input {
+    margin-top: 10px;
+}
+
+/* 🎯 Buttons */
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #0056b3;
+    transform: scale(1.08);
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Result Container */
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploaded-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.details-box {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.details-box p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.details-box .fruit, .details-box .quality {
+    font-weight: bold;
+    color: #ff5722;
+}
+
+/* Buttons */
+.buttons-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #e64a19;
+}
+
+/* Feedback Form */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.feedback-form label {
+    margin: 10px;
+}
+
+.feedback-form input[type="radio"], .feedback-form select {
+    margin-left: 10px;
+}
+
+.submit-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+/* 🌐 General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* 🏢 Header Styling */
+.page-header {
+    background-color: #003366;
+    color: white;
+    padding: 30px 0;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* ✅ Content Section */
+.content-section {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    line-height: 1.6;
+}
+
+.content-section p {
+    font-size: 18px;
+    color: #444;
+}
+
+.content-section ul {
+    list-style-type: square;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.content-section ul li {
+    margin: 10px 0;
+}
+
+.content-section b {
+    color: #003366;
+}
+
+/* ✅ Buttons */
+.buttons-container {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* ✅ Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #003366;
+    color: white;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+/* 🌐 General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* ✅ Header Styling */
+.page-header {
+    background-color: #003366;
+    color: white;
+    padding: 30px 0;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* ✅ Content Section */
+.content-section, .info-content {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    line-height: 1.6;
+}
+
+.content-section p, .info-content p {
+    font-size: 18px;
+    color: #444;
+}
+
+.content-section ul {
+    list-style-type: square;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.content-section ul li {
+    margin: 10px 0;
+}
+
+.content-section b {
+    color: #003366;
+}
+
+/* ✅ Buttons */
+.buttons-container {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* ✅ Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #003366;
+    color: white;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}

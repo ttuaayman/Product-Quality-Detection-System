@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="header">
+        <img src="{{ url_for('static', filename='images/breda_robotics.png') }}" alt="Breda Robotics" class="logo">
+        <img src="{{ url_for('static', filename='images/utrecht_university.png') }}" alt="Utrecht University of Applied Sciences" class="logo">
+    </div>
+
+    <h1>📊 Analysis Result</h1>
+
+    <div class="result-container">
+        <div class="image-box">
+            <img src="{{ image_url }}?v={{ random_value }}" alt="Uploaded Image" class="uploaded-image">
+        </div>
+        <div class="details-box">
+            <h2>Analysis Details</h2>
+            <p><strong>Fruit Type:</strong> <span class="fruit">{{ fruit_type }}</span></p>
+            <p><strong>Quality:</strong> <span class="quality">{{ quality }}</span></p>
+        </div>
+    </div>
+
+    <div class="buttons-container">
+        <a href="/" class="button">🔄 Upload Another Image</a>
+        <a href="/dashboard" class="button">📈 View Dashboard</a>
+    </div>
+
+    <h3>📝 Do you agree with the classification?</h3>
+    <form action="/feedback" method="post" class="feedback-form">
+        <input type="hidden" name="filename" value="{{ filename }}">
+        <input type="hidden" name="fruit_type" value="{{ fruit_type }}">
+        <input type="hidden" name="quality" value="{{ quality }}">
+
+        <label>
+            <input type="radio" name="user_feedback" value="correct"> ✅ Yes, the classification is correct
+        </label>
+        <label>
+            <input type="radio" name="user_feedback" value="incorrect"> ❌ No, the correct classification is:
+            <select name="correct_fruit">
+                <option value="No Fruit Detected">No Fruit Detected</option>
+                <option value="Apple">Apple</option>
+                <option value="Banana">Banana</option>
+                <option value="Orange">Orange</option>
+                <option value="Strawberry">Strawberry</option>
+                <option value="Mango">Mango</option>
+                <option value="Grapes">Grapes</option>
+            </select>
+            <select name="correct_quality">
+                <option value="Fresh">Fresh</option>
+                <option value="Medium">Medium</option>
+                <option value="Rotten">Rotten</option>
+            </select>
+        </label>
+
+        <button type="submit" class="submit-button">Submit Feedback</button>
+    </form>
+
+    <footer>
+        <p>Developed by: <strong>Tareq Tuaayman</strong></p>
+        <p>Master in Next Level Engineering - Utrecht University of Applied Sciences</p>
+    </footer>
+
+</body>
+</html>

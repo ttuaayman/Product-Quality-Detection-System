@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- ✅ Header -->
+    <header class="page-header">
+        <h1>Information</h1>
+    </header>
+
+    <!-- ✅ Content Section -->
+    <section class="info-content">
+        <p>{{ content }}</p>
+    </section>
+
+    <!-- ✅ Back to Home Button -->
+    <div class="buttons-container">
+        <a href="/" class="button">🏠 Back to Home</a>
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer>
+        <p>Developed by: <strong>Tareq Tuaayman</strong></p>
+    </footer>
+
+</body>
+</html>

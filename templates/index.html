@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Quality Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- ✅ Header -->
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/breda_robotics.png') }}" alt="Breda Robotics" class="logo">
+            <h1>Product Quality Detection System</h1>
+            <img src="{{ url_for('static', filename='images/utrecht_university.png') }}" alt="Utrecht University" class="logo">
+        </div>
+    </header>
+
+    <!-- ✅ Project Introduction -->
+    <section class="introduction">
+        <h2>About the Project</h2>
+        <p>
+            This project enhances product quality assessment using <b>AI & computer vision</b>.
+            The system classifies products (e.g., fruits) into <b>Fresh, Medium, or Rotten</b>,
+            helping industries optimize quality control, reduce waste, and ensure premium standards.
+        </p>
+        <p>
+            Implementing this system in factories and retail ensures <b>real-time product quality detection</b>,
+            reducing manual errors and improving efficiency.
+        </p>
+    </section>
+
+    <!-- ✅ Image Source Options -->
+    <section class="analysis-options">
+        <h2>Select an Image Source</h2>
+        <button id="upload-option" class="btn">📂 Upload an Image</button>
+        <button id="camera-option" class="btn">📷 Use Camera</button>
+    </section>
+
+    <!-- ✅ Upload Image Section -->
+    <section id="upload-section" class="upload-section" style="display:none;">
+        <h2>Upload an Image</h2>
+        <form id="upload-form" action="/analyze" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file-input" required>
+            <button type="submit" class="btn">Analyze Image</button>
+        </form>
+    </section>
+
+    <!-- ✅ Camera Capture Section -->
+    <section id="camera-section" class="camera-section" style="display:none;">
+        <h2>Capture an Image</h2>
+        <div class="camera-controls">
+            <select id="camera-select"></select>
+            <button id="start-camera" class="btn">📷 Open Camera</button>
+        </div>
+        <video id="video" width="500" height="350" autoplay style="display:none;"></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <button id="capture" class="btn" style="display:none;">📸 Capture & Analyze</button>
+
+        <form id="camera-form" action="/analyze_camera" method="post">
+            <input type="hidden" name="image_data" id="image_data">
+        </form>
+    </section>
+
+    <!-- ✅ Information Links -->
+    <section class="info-links">
+        <h2>Learn More</h2>
+        <ul>
+            <li><a href="{{ url_for('breda_robotics') }}">🏢 About Breda Robotics</a></li>
+            <li><a href="{{ url_for('utrecht_university') }}">🎓 About Utrecht University</a></li>
+            <li><a href="{{ url_for('next_level_engineering') }}">📚 My Master's Program</a></li>
+            <li><a href="{{ url_for('project_info') }}">💡 Project Overview</a></li>
+        </ul>
+    </section>
+
+    <!-- ✅ Dashboard Button -->
+    <div class="dashboard-link">
+        <a href="{{ url_for('dashboard') }}" class="btn">📈 View Dashboard</a>
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer>
+        <p>Developed by: <strong>Tareq Tuaayman</strong></p>
+        <p>Master in Next Level Engineering - Utrecht University of Applied Sciences</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
