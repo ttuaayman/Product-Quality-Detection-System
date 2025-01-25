@@ -1,24 +1,28 @@
 ﻿# Product-Quality-Detection-System
 
-# AI-Based Fruit Classification System with Real-Time Quality Assessment Overview
+# AI-Based Fruit Classification System with Real-Time Quality Assessment 
+
+**Overview**
 This project implements an AI-based Fruit Classification System that can identify fruit types and assess their quality (fresh or rotten) based on image analysis. The system utilizes deep learning models, specifically Convolutional Neural Networks (CNNs), for accurate fruit classification and quality detection. This application is designed to be useful for industries such as agriculture, retail, and e-commerce, where the quality of products plays a crucial role in business operations.
 
 The system is built using Flask for the web interface and TensorFlow/Keras for the machine learning model. It supports both image uploads and real-time image analysis through camera input, allowing users to classify fruits directly from their devices.
 
-Features
+**Features**
 Fruit Type Classification: Classifies fruits into various categories like Apple, Banana, Orange, Mango, etc.
 Quality Detection: Assesses the quality of fruits, categorizing them as Fresh, Medium, or Rotten.
 Real-time Feedback: Allows users to provide feedback on the classification results, improving the model's accuracy over time.
 Web Interface: Built with Flask, providing an easy-to-use interface for users to upload images or use their cameras for analysis.
 Dashboard: Displays real-time statistics about the classification results and user feedback.
-Technologies Used
+
+**Technologies Used**
 TensorFlow & Keras: Deep learning framework used to build and train the fruit classification model using Convolutional Neural Networks (CNN).
 Flask: A Python-based web framework used to develop the user interface and handle the backend.
 OpenCV: A computer vision library used for image processing, such as edge detection and feature extraction.
 scikit-image: Used for advanced image processing tasks, including texture analysis.
 Pandas: A data manipulation library used to manage user feedback and classification results.
 Project Structure
-The project directory is organized as follows:
+
+**The project directory is organized as follows:**
 
 bash
 Copy
@@ -46,7 +50,8 @@ Copy
 |-- app.py                       # Flask application and backend logic
 |-- requirements.txt             # List of dependencies for the project
 |-- README.md                    # Project description and instructions
-Setup and Installation
+
+**Setup and Installation**
 Clone the Repository:
 
 First, clone the repository to your local machine:
@@ -84,7 +89,7 @@ Copy
 http://127.0.0.1:5000/
 You can now upload fruit images or use your camera to classify fruits.
 
-How It Works
+**How It Works**
 Image Upload/Camera Input:
 
 Users can upload an image of a fruit, or use their device’s camera for real-time analysis.
@@ -104,12 +109,14 @@ This feedback is stored in a CSV file for future use, helping to retrain and imp
 Real-Time Dashboard:
 
 The system also provides a dashboard where statistics on fruit classifications and user feedback can be visualized.
-Future Improvements
+
+**Future Improvements**
 Model Expansion: Extend the model to support more fruit types and quality categories.
 Low-Quality Image Handling: Enhance the model's ability to handle low-quality images or images with poor lighting.
 Integration with Real-Time Applications: Deploy the system for use in retail or agricultural environments where fruits can be classified in real-time as they enter the market.
 Contributing
-We welcome contributions! If you have any ideas or improvements to make, feel free to fork the repository, make your changes, and create a pull request.
+
+**We welcome contributions! If you have any ideas or improvements to make, feel free to fork the repository, make your changes, and create a pull request.**
 
 License
 This project is licensed under the MIT License.
