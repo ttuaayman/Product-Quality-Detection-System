@@ -4,7 +4,7 @@ from tensorflow.keras.models import Sequential # type: ignore
 from tensorflow.keras.layers import Dense # type: ignore
 
 # تحميل النموذج
-model_path = "models/fruit_classifier_improved.pkl"
+model_path = "models/fruit_classifier_improved_5features.pkl"
 sk_model = joblib.load(model_path)
 
 # التحقق من أن النموذج من نوع Scikit-learn
