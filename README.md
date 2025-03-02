@@ -46,11 +46,46 @@ This project implements an AI-based Fruit Classification System that identifies 
 ---
 
 ## Directory Structure
-
-Product-Quality-Detection/ │ ├── app.py # Main Flask application ├── train_cnn.py # Script to train a standard CNN ├── train_mobilenetv2.py # Script to train MobileNetV2 with transfer learning ├── train_model_final.py # Combined approach using CSV-based features and ML ├── results/ # Contains logs, confusion matrices, training curves, classification reports, and sample predictions │ ├── cnn_acc.png │ ├── cnn_loss.png │ ├── cnn_cm.png │ ├── mobilenetv2_acc.png │ ├── mobilenetv2_loss.png │ ├── mobilenetv2_cm.png │ ├── random_sample_preds.png │ └── user_feedback.csv ├── models/ # Saved models (e.g., fruit_cnn.keras, fruit_mobilenetv2.keras, etc.) ├── dataset/ # Datasets for training and testing (train_6class, test_6class) ├── static/ # Static files (CSS, images) ├── templates/ # HTML templates (index.html, result.html, dashboard.html, etc.) ├── requirements.txt # Python dependencies └── README.md # This file
-
-yaml
-Copy
+```
+Product-Quality-Detection/
+│
+├── app.py                # Main Flask application
+├── train_cnn.py          # Script to train a custom CNN model
+├── train_mobilenetv2.py  # Script to train a MobileNetV2 model (transfer learning)
+├── train_model_final.py  # Another final training script (e.g., for RandomForest or improved CNN)
+├── visualization.py      # Visualization script for plotting curves, confusion matrices, sample predictions
+│
+├── /static
+│   ├── /css
+│   │   └── style.css     # Styles for the web interface
+│   ├── /images
+│   │   ├── breda_robotics.png
+│   │   └── utrecht_university.png
+│   └── /js (if needed)
+│
+├── /templates
+│   ├── index.html        # Homepage
+│   ├── result.html       # Displays classification results
+│   ├── dashboard.html    # Dashboard for real-time stats
+│   ├── info.html         # Additional info pages
+│   └── ...
+│
+├── /models
+│   ├── fruit_classifier_cnn.h5
+│   ├── fruit_classifier_mobilenetv2.h5
+│   └── ...
+│
+├── /results
+│   ├── cnn_history.csv           # Training logs (epochs, accuracy, loss, etc.) for CNN
+│   ├── cnn_predictions.csv       # Predictions (true_label, pred_label) for CNN
+│   ├── mobilenetv2_history.csv   # Training logs for MobileNetV2
+│   ├── mobilenetv2_predictions.csv
+│   ├── user_feedback.csv         # Stores user feedback from the web app
+│   └── ...
+│
+├── requirements.txt      # List of dependencies
+└── README.md             # Project documentation (this file)
+```
 
 ---
 
