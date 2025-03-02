@@ -11,7 +11,7 @@ This project implements an AI-based Fruit Classification System that identifies 
 - **Deep Learning & Transfer Learning:** Uses a standard CNN and MobileNetV2 for enhanced performance.
 - **User Feedback Loop:** Captures user corrections to improve future model training.
 - **Visualization Tools:** Generates confusion matrices, training curves, and classification reports.
-
+<img width="1277" alt="Image" src="https://github.com/user-attachments/assets/abdc5a86-1dcd-4e84-a42e-5aa784a182d5" />
 ---
 
 ## New Additions and Modifications
@@ -23,6 +23,7 @@ This project implements an AI-based Fruit Classification System that identifies 
      Implements transfer learning using MobileNetV2 by freezing the initial layers and fine-tuning the final layers for the 6-class dataset.
    - **`train_model_final.py`:**  
      Combines CSV-based feature extraction with a small neural network and a RandomForest model for 6-class classification.
+<img width="1270" alt="Image" src="https://github.com/user-attachments/assets/1c78287b-5bae-474f-ab98-6d1cc3ed0d22" />
 
 2. **Enhanced Visualization and Analysis:**
    - **Confusion Matrix:**  
@@ -42,6 +43,7 @@ This project implements an AI-based Fruit Classification System that identifies 
      Allows users to provide corrections (stored in `user_feedback.csv`), enabling future model improvements.
    - **Dashboard Updates:**  
      The `/dashboard` route now displays additional categories, including a “No Fruit” percentage.
+<img width="1267" alt="Image" src="https://github.com/user-attachments/assets/2083f911-2ff4-435d-aa96-a48431eac012" />
 
 ---
 
