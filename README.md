@@ -120,6 +120,14 @@ Printed in the terminal and saved as log files.
 - Sample Predictions:
 Check the random_sample_preds.png image for an overview of test predictions.
 ## Explanation of Figures and Comparisons
+<img src="https://github.com/user-attachments/assets/770ac87e-76f2-41c5-a78d-1e5c44ba9def" alt="Image" width="250" />
+<img src="https://github.com/user-attachments/assets/96d01af6-6360-45e8-9f12-03f2967c72a3" alt="Image" width="250" />
+<img src="https://github.com/user-attachments/assets/2483af2f-a812-47b7-bed4-ac1f3e9bbcdb" alt="Image" width="150" />
+
+<img src="https://github.com/user-attachments/assets/fd7c069c-491c-4e73-b03b-e20661fa2199" alt="Image" width="250" />
+<img src="https://github.com/user-attachments/assets/7929ab31-31f4-4a0a-b71c-682537f87f4a" alt="Image" width="250" />
+<img src="https://github.com/user-attachments/assets/52f63c81-3586-4f52-86dd-09b94396cdd1" alt="Image" width="150" />
+
 CNN Model:
 Accuracy & Loss Curves:
 cnn_acc.png and cnn_loss.png show the evolution of training and validation metrics over epochs. The training accuracy typically increases more rapidly, indicating model fitting.
